@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => 'cse-6331-db.c72x8ipqq7oz.us-east-2.rds.amazonaws.com',
+	'username' => 'salomart',
+	'password' => 'cse6331qna',
+	'database' => 'cse_6331_db',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
