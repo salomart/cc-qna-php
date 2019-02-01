@@ -13,12 +13,7 @@ class Quiz0 extends CI_Controller {
     public function copyFile() {
         $data['title'] = 'Quiz 0';
         $filename = $this->input->post('filename');
-        
-        if (!file_exists('quiz0_orig/')) {
-            mkdir('quiz0_orig/');
-        }
-        
-        $files = array_diff(scandir('quiz0_orig'), array('.', '..'));
+        $files = scandir('quiz0_orig');
         
         if (in_array($filename, $files)) {
             if (!file_exists('quiz0_copies/')) {

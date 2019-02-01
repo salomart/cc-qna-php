@@ -6,7 +6,7 @@ Class Quiz0_model extends CI_Model {
     
     // Task 8
     public function get_image_name($name) {
-        $this->db->where('name =', $name);
+        $this->db->where('name', $name);
         $query = $this->db->get('q0people');
         $array = $query->result_array();
         
@@ -20,11 +20,11 @@ Class Quiz0_model extends CI_Model {
     // Task 9
     public function get_people($lowestGrade, $highestGrade) {
         if ($lowestGrade) {
-            $this->db->where('grade >', $lowestGrade);
+            $this->db->where('grade >=', $lowestGrade);
         }
         
         if ($highestGrade) {
-            $this->db->where('grade <', $highestGrade);
+            $this->db->where('grade <=', $highestGrade);
         }
         
         $query = $this->db->get('q0people');
@@ -38,6 +38,8 @@ Class Quiz0_model extends CI_Model {
         
         if (!$this->db->update('q0people')) {
             return $this->db->error();
+        } else {
+            return null;
         }
     }
 }

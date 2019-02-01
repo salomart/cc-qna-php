@@ -121,18 +121,17 @@ echo '</div>';
 echo form_submit(array('name' => 'updateKeywords', 'value' => 'Update Keywords', 'class' => 'btn btn-primary'));
 echo form_close();
 
-echo '<br>';
-
 if (isset($keywordsUpdated)) {
-    if ($keywordsUpdated == true) {
+    if ($keywordsUpdated == null) {
+        echo '<br>';
         echo 'Keywords updated for the user.';
-        echo '<br>';
     } else {
-        echo 'User not found!';
         echo '<br>';
+        echo 'User not found!';
     }
 }
 
 ?>
 
+<br>
 </div>
