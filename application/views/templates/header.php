@@ -26,7 +26,7 @@
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assignments</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="#">Assignment 1</a>
-					<a class="dropdown-item" href="#">Assignment 2</a>
+					<a class="dropdown-item" href="<?php echo base_url() . 'Assignment2' ?>">Assignment 2</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown">
