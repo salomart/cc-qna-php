@@ -12,5 +12,41 @@
 
 <body>
 
-<header>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<a class="navbar-brand" href="<?php echo base_url() ?>">CSE 6331</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link" href="<?php echo base_url() ?>">Home</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Assignments</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="#">Assignment 1</a>
+					<a class="dropdown-item" href="#">Assignment 2</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Quizzes</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz0' ?>">Quiz 0</a>
+					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz1' ?>">Quiz 1</a>
+					<a class="dropdown-item" href="#">Quiz 2</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<div class="jumbotron" style="padding: 2rem;">
+	<h2 style="text-align: center;">
+		Salomon Martinez
+		<br>
+		1001582988
+		<br>
+		<?php echo $title; ?>
+	</h2>
+</div>

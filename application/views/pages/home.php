@@ -1,1 +1,3 @@
-<p>Welcome! Below are my implementations for the Cloud Computing quizzes and assignments.</p>
+<div class="container">
+	<p style="text-align: center;">Welcome! My implementations for the quizzes and assignments are in the navbar!</p>
+</div>

@@ -1,15 +1,5 @@
 <div class="container">
 
-<div class="jumbotron" style="padding: 2rem;">
-<h2 style="text-align: center;">
-Salomon Martinez
-<br>
-1001582988
-<br>
-Quiz 0
-</h2>
-</div>
-
 <?php
 
 // ************************ Task 7 ************************
