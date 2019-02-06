@@ -1,5 +1,3 @@
-<div class="container">
-
 <?php
 
 // ************************ Task 7 ************************
@@ -122,6 +120,3 @@ if (isset($keywordsUpdated)) {
 }
 
 ?>
-
-<br>
-</div>

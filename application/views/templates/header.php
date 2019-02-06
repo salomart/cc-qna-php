@@ -12,6 +12,10 @@
 
 <body>
 
+<div style="min-height: 100vh; padding-bottom: 80px;">
+
+<header>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="<?php echo base_url() ?>">CSE 6331</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,6 +45,8 @@
 	</div>
 </nav>
 
+</header>
+
 <div class="jumbotron" style="padding: 2rem;">
 	<h2 style="text-align: center;">
 		Salomon Martinez
@@ -50,3 +56,5 @@
 		<?php echo $title; ?>
 	</h2>
 </div>
+
+<div class="container">

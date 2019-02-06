@@ -1,5 +1,3 @@
-<div class="container">
-
 <?php
 
 // ************************ Task 6 ************************
@@ -128,6 +126,3 @@ if (isset($filesMoved)) {
 }
 
 ?>
-
-<br>
-</div>

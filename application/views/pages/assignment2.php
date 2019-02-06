@@ -1,5 +1,3 @@
-<div class="container">
-
 <?php
 
 // ************************ Task 1 ************************
@@ -56,6 +54,3 @@ if (isset($locations)) {
 }
 
 ?>
-
-<br>
-</div>
