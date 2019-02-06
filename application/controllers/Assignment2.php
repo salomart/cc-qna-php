@@ -29,4 +29,24 @@ class Assignment2 extends CI_Controller {
         $this->load->view('pages/assignment2');
         $this->load->view('templates/footer');
     }
+    
+    // Task 3
+    public function getQuakesByLocRange() {
+        $data['title'] = 'Assignment 2';
+        $latitude = $this->input->post('latitude');
+        $longitude = $this->input->post('longitude');
+        $distance = $this->input->post('distance');
+        
+        if ($latitude != null && strcmp($latitude, '') != 0
+            && $longitude != null && strcmp($longitude, '') != 0
+            && $distance != null && strcmp($distance, '') != 0) {
+            $data['quakes'] = $this->assignment2_model->get_quakes($latitude, $longitude, $distance);
+        } else {
+            $data['quakes'] = array();
+        }
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/assignment2');
+        $this->load->view('templates/footer');
+    }
 }

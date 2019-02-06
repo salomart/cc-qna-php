@@ -43,4 +43,40 @@ Class Assignment2_model extends CI_Model {
         
         return $locations;
     }
+    
+    // Task 3
+    public function get_quakes($latitude, $longitude, $distance) {
+        $kmPerDegree = 111.2;
+        $lowestLatitude = $latitude - ($distance / $kmPerDegree);
+        $highestLatitude = $latitude + ($distance / $kmPerDegree);
+        $lowestLongitude = $longitude - ($distance / $kmPerDegree);
+        $highestLongitude = $longitude + ($distance / $kmPerDegree);
+        
+        $this->db->where('latitude >=', $lowestLatitude);
+        $this->db->where('latitude <=', $highestLatitude);
+        $this->db->where('longitude >=', $lowestLongitude);
+        $this->db->where('longitude <=', $highestLongitude);
+        $query = $this->db->get('q2earthquakes');
+        
+        $resultArr = $query->result_array();
+        
+        if (sizeof($resultArr) > 0) {
+            $quakes = array();
+            
+            foreach ($resultArr as $result) {
+                $latitudeDiff = $result['latitude'] - $latitude;
+                $longitudeDiff = $result['longitude'] - $longitude;
+                $distance2 = $kmPerDegree * sqrt(($latitudeDiff * $latitudeDiff)
+                    + ($longitudeDiff * $longitudeDiff));
+                
+                if ($distance >= $distance2) {
+                    array_push($quakes, $result);
+                }
+            }
+            
+            return $quakes;
+        } else {
+            return array();
+        }
+    }
 }
