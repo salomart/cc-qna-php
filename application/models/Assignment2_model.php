@@ -7,7 +7,7 @@ Class Assignment2_model extends CI_Model {
     // Task 1
     public function get_larger_magnitudes($magnitude) {
         $this->db->where('mag >=', $magnitude);
-        $query = $this->db->get('q2earthquakes');
+        $query = $this->db->get('a2earthquakes');
         $array = $query->result_array();
         
         if ($array != null) {
@@ -27,7 +27,7 @@ Class Assignment2_model extends CI_Model {
             $this->db->where('mag <=', $highestMagnitude);
         }
         
-        $query = $this->db->get('q2earthquakes');
+        $query = $this->db->get('a2earthquakes');
         $resultArr = $query->result_array();
         $locations = array();
         
@@ -56,7 +56,7 @@ Class Assignment2_model extends CI_Model {
         $this->db->where('latitude <=', $highestLatitude);
         $this->db->where('longitude >=', $lowestLongitude);
         $this->db->where('longitude <=', $highestLongitude);
-        $query = $this->db->get('q2earthquakes');
+        $query = $this->db->get('a2earthquakes');
         
         $resultArr = $query->result_array();
         
