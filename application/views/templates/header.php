@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 
 <head>
 <meta charset="utf-8">
@@ -10,9 +10,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body style="height: 100%;">
 
-<div style="min-height: 100vh; padding-bottom: 80px;">
+<div style="min-height: 100%; padding-bottom: 80px;">
 
 <header>
 
