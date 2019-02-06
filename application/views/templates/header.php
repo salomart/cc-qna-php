@@ -38,7 +38,7 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz0' ?>">Quiz 0</a>
 					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz1' ?>">Quiz 1</a>
-					<a class="dropdown-item" href="#">Quiz 2</a>
+					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz2' ?>">Quiz 2</a>
 				</div>
 			</li>
 		</ul>
