@@ -36,11 +36,13 @@ class Quiz2 extends CI_Controller {
         $latitude = $this->input->post('latitude');
         $longitude = $this->input->post('longitude');
         $distance = $this->input->post('distance');
+        $mag = $this->input->post('mag');
         
         if ($latitude != null && strcmp($latitude, '') != 0
             && $longitude != null && strcmp($longitude, '') != 0
-            && $distance != null && strcmp($distance, '') != 0) {
-                $data['quakes'] = $this->quiz2_model->get_quakes($latitude, $longitude, $distance);
+            && $distance != null && strcmp($distance, '') != 0
+            && $mag != null && strcmp($mag, '') != 0) {
+                $data['quakes'] = $this->quiz2_model->get_quakes($latitude, $longitude, $distance, $mag);
             } else {
                 $data['quakes'] = array();
             }
