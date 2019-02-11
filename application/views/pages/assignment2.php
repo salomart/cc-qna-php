@@ -25,10 +25,10 @@ if (isset($numOfMagnitudes)) {
 echo '<hr>';
 
 // ************************ Task 2 ************************
-echo '<h3>Task 2: Get Earthquake Locations And Count By Magnitude Range</h3>';
+echo '<h3>Task 2: Get Earthquake Locations And Count By Magnitude Range And Date</h3>';
 echo '<br>';
 
-echo form_open('Assignment2/getLocsByMagRange');
+echo form_open('Assignment2/getLocsByMagRangeAndDate');
 echo '<div class="form-group">';
 echo form_label('Lowest Magnitude:', 'lowestMagnitude');
 echo form_input(array('name' => 'lowestMagnitude', 'id' => 'lowestMagnitude', 'class' => 'form-control'));
@@ -37,7 +37,15 @@ echo '<div class="form-group">';
 echo form_label('Highest Magnitude:', 'highestMagnitude');
 echo form_input(array('name' => 'highestMagnitude', 'id' => 'highestMagnitude', 'class' => 'form-control'));
 echo '</div>';
-echo form_submit(array('name' => 'getLocsByMagRange', 'value' => 'Get Locations', 'class' => 'btn btn-primary'));
+echo '<div class="form-group">';
+echo form_label('From:', 'fromDate');
+echo form_input(array('name' => 'fromDate', 'id' => 'fromDate', 'class' => 'form-control'));
+echo '</div>';
+echo '<div class="form-group">';
+echo form_label('To:', 'toDate');
+echo form_input(array('name' => 'toDate', 'id' => 'toDate', 'class' => 'form-control'));
+echo '</div>';
+echo form_submit(array('name' => 'getLocsByMagRangeAndDate', 'value' => 'Get Locations', 'class' => 'btn btn-primary'));
 echo form_close();
 
 if (isset($locations)) {
@@ -84,6 +92,30 @@ if (isset($quakes)) {
     } else {
         echo '<br>';
         echo 'No locations found!';
+    }
+}
+
+echo '<hr>';
+
+// ************************ Task 4 ************************
+echo '<h3>Task 4: Local Time Of An Earthquake</h3>';
+echo '<br>';
+
+echo form_open('Assignment2/getLocalTime');
+echo '<div class="form-group">';
+echo form_label('Earthquake ID:', 'quakeId');
+echo form_input(array('name' => 'quakeId', 'id' => 'quakeId', 'class' => 'form-control'));
+echo '</div>';
+echo form_submit(array('name' => 'getLocalTime', 'value' => 'Get Local Time', 'class' => 'btn btn-primary'));
+echo form_close();
+
+if (isset($localTime)) {
+    if ($localTime != 0) {
+        echo '<br>';
+        echo 'Local Time: ' . date('m/d/Y H:i:s', $localTime);
+    } else {
+        echo '<br>';
+        echo 'Invalid Earthquake ID!';
     }
 }
 
