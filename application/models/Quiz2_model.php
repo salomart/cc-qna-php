@@ -18,66 +18,31 @@ Class Quiz2_model extends CI_Model {
         }
     }
     
-    // Task 2
-    public function get_locations($lowestMagnitude, $highestMagnitude, $fromDate, $toDate) {
-        if ($lowestMagnitude) {
+    // Task 7
+    public function get_mags($lowestMagnitude, $highestMagnitude, $net) {
+        if ($lowestMagnitude && $highestMagnitude && $net) {
             $this->db->where('mag >=', $lowestMagnitude);
-        }
-        
-        if ($highestMagnitude) {
             $this->db->where('mag <=', $highestMagnitude);
-        }
-        
-        $query = $this->db->get('q2quakes');
-        $resultArr = $query->result_array();
-        
-        $newResultArr = array();
-        $newFromDate = strtotime($fromDate);
-        $newToDate = strtotime($toDate);
-        
-        if ($newFromDate != false && $newToDate != false) {
-            foreach ($resultArr as $result) {
-                $resultDate = strtotime($result['time']);
-                
-                if ($resultDate >= $newFromDate && $resultDate <= $newToDate) {
-                    array_push($newResultArr, $result);
-                }
+            $this->db->where('net', $net);
+            
+            $query = $this->db->get('q2quakes');
+            $resultArr = $query->result_array();
+            
+            $mags = array();
+            
+            for ($i=0; $i<20; $i++) {
+                array_push($mags, 0);
             }
-        } else if ($newFromDate != false) {
+            
             foreach ($resultArr as $result) {
-                $resultDate = strtotime($result['time']);
-                
-                if ($resultDate >= $newFromDate) {
-                    array_push($newResultArr, $result);
-                }
+                $index = (int)($result['mag'] * 2);
+                $mags[$index] = $mags[$index] + 1;
             }
-        } else if ($newToDate != false) {
-            foreach ($resultArr as $result) {
-                $resultDate = strtotime($result['time']);
-                
-                if ($resultDate <= $newToDate) {
-                    array_push($newResultArr, $result);
-                }
-            }
+            
+            return $mags;
+        } else {
+            return array();
         }
-        
-        if (sizeof($newResultArr) > 0) {
-            $resultArr = $newResultArr;
-        }
-        
-        $locations = array();
-        
-        if ($resultArr != null) {
-            foreach ($resultArr as $result) {
-                if (array_key_exists($result['locationSource'], $locations)) {
-                    $locations[$result['locationSource']] = $locations[$result['locationSource']] + 1;
-                } else {
-                    $locations[$result['locationSource']] = 1;
-                }
-            }
-        }
-        
-        return $locations;
     }
     
     // Task 3

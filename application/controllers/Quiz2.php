@@ -19,12 +19,11 @@ class Quiz2 extends CI_Controller {
         $this->load->view('templates/footer');
     }
     
-    // Task 2
-    public function getLocsByMagRangeAndDate() {
+    // Task 7
+    public function getMagsByRangeAndNet() {
         $data['title'] = 'Quiz 2';
-        $data['locations'] = $this->quiz2_model->get_locations($this->input->post('lowestMagnitude'),
-            $this->input->post('highestMagnitude'), $this->input->post('fromDate'),
-            $this->input->post('toDate'));
+        $data['mags'] = $this->quiz2_model->get_mags($this->input->post('lowestMagnitude'),
+            $this->input->post('highestMagnitude'), $this->input->post('net'));
         
         $this->load->view('templates/header', $data);
         $this->load->view('pages/quiz2');

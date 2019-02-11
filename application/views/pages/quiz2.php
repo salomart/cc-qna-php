@@ -24,11 +24,11 @@ if (isset($numOfMagnitudes)) {
 
 echo '<hr>';
 
-// ************************ Task 2 ************************
-echo '<h3>Task 2: Get Earthquake Locations And Count By Magnitude Range And Date</h3>';
+// ************************ Task 7 ************************
+echo '<h3>Task 7: Get Magnitudes By Magnitude Range And Net</h3>';
 echo '<br>';
 
-echo form_open('Quiz2/getLocsByMagRangeAndDate');
+echo form_open('Quiz2/getMagsByRangeAndNet');
 echo '<div class="form-group">';
 echo form_label('Lowest Magnitude:', 'lowestMagnitude');
 echo form_input(array('name' => 'lowestMagnitude', 'id' => 'lowestMagnitude', 'class' => 'form-control'));
@@ -38,26 +38,29 @@ echo form_label('Highest Magnitude:', 'highestMagnitude');
 echo form_input(array('name' => 'highestMagnitude', 'id' => 'highestMagnitude', 'class' => 'form-control'));
 echo '</div>';
 echo '<div class="form-group">';
-echo form_label('From:', 'fromDate');
-echo form_input(array('name' => 'fromDate', 'id' => 'fromDate', 'class' => 'form-control'));
+echo form_label('Net:', 'net');
+echo form_input(array('name' => 'net', 'id' => 'net', 'class' => 'form-control'));
 echo '</div>';
-echo '<div class="form-group">';
-echo form_label('To:', 'toDate');
-echo form_input(array('name' => 'toDate', 'id' => 'toDate', 'class' => 'form-control'));
-echo '</div>';
-echo form_submit(array('name' => 'getLocsByMagRangeAndDate', 'value' => 'Get Locations', 'class' => 'btn btn-primary'));
+echo form_submit(array('name' => 'getMagsByRangeAndNet', 'value' => 'Get Locations', 'class' => 'btn btn-primary'));
 echo form_close();
 
-if (isset($locations)) {
-    if (sizeof($locations) > 0) {
-        foreach ($locations as $location => $count) {
-            echo '<br>';
-            echo $location . ': ';
-            echo $count;
+if (isset($mags)) {
+    if (sizeof($mags) > 0) {
+        echo '<br>';
+        echo '<table class="table table-striped"><tr>';
+        for ($i=0; $i<sizeof($mags); $i++) {
+            echo '<th>' . ((float)$i)/2 . ' - ' . (((float)$i)/2 + 0.5) . '</th>';
         }
+        echo '</tr>';
+        echo '<tr>';
+        for ($i=0; $i<sizeof($mags); $i++) {
+            echo '<td>' . $mags[$i] . '</td>';
+        }
+        echo '</tr>';
+        echo '<table>';
     } else {
         echo '<br>';
-        echo 'No locations found!';
+        echo 'None found!';
     }
 }
 
