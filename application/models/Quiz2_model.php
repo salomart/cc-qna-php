@@ -45,8 +45,8 @@ Class Quiz2_model extends CI_Model {
         }
     }
     
-    // Task 3
-    public function get_quakes($latitude, $longitude, $distance) {
+    // Task 8
+    public function get_quakes($latitude, $longitude, $distance, $mag) {
         $kmPerDegree = 111.2;
         $lowestLatitude = $latitude - ($distance / $kmPerDegree);
         $highestLatitude = $latitude + ($distance / $kmPerDegree);
@@ -57,6 +57,7 @@ Class Quiz2_model extends CI_Model {
         $this->db->where('latitude <=', $highestLatitude);
         $this->db->where('longitude >=', $lowestLongitude);
         $this->db->where('longitude <=', $highestLongitude);
+        $this->db->where('mag >', $mag);
         $query = $this->db->get('q2quakes');
         
         $resultArr = $query->result_array();

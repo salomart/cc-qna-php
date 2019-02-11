@@ -67,7 +67,7 @@ if (isset($mags)) {
 echo '<hr>';
 
 // ************************ Task 3 ************************
-echo '<h3>Task 3: Get Nearby Earthquakes From Latitude, Longitude, and Distance</h3>';
+echo '<h3>Task 8: Get Nearby Earthquakes From Latitude, Longitude, Magintude, and Distance</h3>';
 echo '<br>';
 
 echo form_open('Quiz2/getQuakesByLocRange');
@@ -82,6 +82,10 @@ echo '</div>';
 echo '<div class="form-group">';
 echo form_label('Distance (in km):', 'distance');
 echo form_input(array('name' => 'distance', 'id' => 'distance', 'class' => 'form-control'));
+echo '</div>';
+echo '<div class="form-group">';
+echo form_label('Magnitude:', 'mag');
+echo form_input(array('name' => 'mag', 'id' => 'mag', 'class' => 'form-control'));
 echo '</div>';
 echo form_submit(array('name' => 'getQuakesByLocRange', 'value' => 'Get Earthquakes', 'class' => 'btn btn-primary'));
 echo form_close();
