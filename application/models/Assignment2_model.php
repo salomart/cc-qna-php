@@ -2,6 +2,7 @@
 Class Assignment2_model extends CI_Model {
     public function __construct() {
         $this->load->database();
+        date_default_timezone_set('UTC');
     }
     
     // Task 1
