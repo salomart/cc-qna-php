@@ -20,10 +20,11 @@ class Assignment2 extends CI_Controller {
     }
     
     // Task 2
-    public function getLocsByMagRange() {
+    public function getLocsByMagRangeAndDate() {
         $data['title'] = 'Assignment 2';
         $data['locations'] = $this->assignment2_model->get_locations($this->input->post('lowestMagnitude'),
-            $this->input->post('highestMagnitude'));
+            $this->input->post('highestMagnitude'), $this->input->post('fromDate'),
+            $this->input->post('toDate'));
         
         $this->load->view('templates/header', $data);
         $this->load->view('pages/assignment2');
@@ -44,6 +45,16 @@ class Assignment2 extends CI_Controller {
         } else {
             $data['quakes'] = array();
         }
+        
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/assignment2');
+        $this->load->view('templates/footer');
+    }
+    
+    // Task 4
+    public function getLocalTime() {
+        $data['title'] = 'Assignment 2';
+        $data['localTime'] = $this->assignment2_model->get_local_time($this->input->post('quakeId'));
         
         $this->load->view('templates/header', $data);
         $this->load->view('pages/assignment2');
