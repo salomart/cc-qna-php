@@ -7,7 +7,7 @@ Class Quiz2_model extends CI_Model {
     
     // Task 7
     public function get_mags($lowestMagnitude, $highestMagnitude, $net) {
-        if ($lowestMagnitude && $highestMagnitude && $net) {
+        if ($lowestMagnitude != null && $highestMagnitude != null && $net != null) {
             $this->db->where('mag >=', $lowestMagnitude);
             $this->db->where('mag <=', $highestMagnitude);
             $this->db->where('net', $net);
@@ -32,7 +32,7 @@ Class Quiz2_model extends CI_Model {
     
     // Task 8
     public function get_quakes_by_cdm($latitude, $longitude, $distance, $mag) {
-        if ($latitude && $longitude && $distance && $mag) {
+        if ($latitude != null && $longitude != null && $distance != null && $mag != null) {
             $kmPerDegree = 111.2;
             $lowestLatitude = $latitude - ($distance / $kmPerDegree);
             $highestLatitude = $latitude + ($distance / $kmPerDegree);
@@ -71,11 +71,12 @@ Class Quiz2_model extends CI_Model {
     
     // Task 9
     public function get_quakes_by_pr($minPolarity, $maxPolarity) {
-        if ($minPolarity && $maxPolarity) {
+        if ($minPolarity != null && $maxPolarity != null) {
             $sql = 'SELECT locationSource, COUNT(*) AS count, MAX(mag) AS max '
                 . 'FROM q2quakes INNER JOIN q2polarity '
                     . 'ON q2quakes.locationSource=q2polarity.Location '
-                        . 'WHERE Polarity >=150 AND Polarity <= 200 GROUP BY locationSource';
+                        . 'WHERE Polarity >=' . $minPolarity . ' AND Polarity <= '
+                            . $maxPolarity . ' GROUP BY locationSource';
             $query = $this->db->query($sql);
             return $query->result_array();
         } else {
