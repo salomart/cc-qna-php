@@ -48,7 +48,7 @@
 					<a class="dropdown-item" href="#">Quiz 4</a>
 					<a class="dropdown-item" href="#">Quiz 5</a>
 					<a class="dropdown-item" href="#">Quiz 6</a>
-					<a class="dropdown-item" href="#">Quiz 7</a>
+					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz7' ?>">Quiz 7</a>
 				</div>
 			</li>
 		</ul>
