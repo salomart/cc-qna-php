@@ -31,6 +31,11 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="#">Assignment 1</a>
 					<a class="dropdown-item" href="<?php echo base_url() . 'Assignment2' ?>">Assignment 2</a>
+					<a class="dropdown-item" href="#">Assignment 3</a>
+					<a class="dropdown-item" href="#">Assignment 4</a>
+					<a class="dropdown-item" href="#">Assignment 5</a>
+					<a class="dropdown-item" href="#">Assignment 6</a>
+					<a class="dropdown-item" href="<?php echo base_url() . 'Assignment7' ?>">Assignment 7</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown">
@@ -39,6 +44,11 @@
 					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz0' ?>">Quiz 0</a>
 					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz1' ?>">Quiz 1</a>
 					<a class="dropdown-item" href="<?php echo base_url() . 'Quiz2' ?>">Quiz 2</a>
+					<a class="dropdown-item" href="#">Quiz 3</a>
+					<a class="dropdown-item" href="#">Quiz 4</a>
+					<a class="dropdown-item" href="#">Quiz 5</a>
+					<a class="dropdown-item" href="#">Quiz 6</a>
+					<a class="dropdown-item" href="#">Quiz 7</a>
 				</div>
 			</li>
 		</ul>
